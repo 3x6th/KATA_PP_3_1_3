@@ -36,11 +36,11 @@ public class User implements UserDetails {
     }
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @Fetch(FetchMode.JOIN)
+    @Fetch(FetchMode.JOIN) // посмотреть
     @JoinTable(name="user_roles",
             joinColumns=@JoinColumn(name="user_id"),
             inverseJoinColumns=@JoinColumn(name = "role_id"))
-    private Set<Role> roles;
+    private Set<Role> roles;  // add hash & equals
 
     public void addRoles(Collection<Role> roleCollection) {
         roles = new HashSet<>();
