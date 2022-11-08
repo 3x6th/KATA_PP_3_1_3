@@ -8,35 +8,35 @@
 <body>
 <h2>User info</h2>
 <br>
-<!--<form th:action="@{/admin/saveUser}" th:object="${user}" method="post">-->
-<!--    <br>-->
-<!--    <label th:for="username">Username</label>-->
-<!--    <input type="text" name="username" th:id="name" th:value="${user.getUsername()}">-->
-<!--    <br>-->
-<!--    <label th:for="name">Name</label>-->
-<!--    <input type="text" name="name" th:id="name" th:value="${user.getName()}">-->
-<!--    <br>-->
-<!--    <label th:for="surname">Surname</label>-->
-<!--    <input type="text" name="surName" th:id="surname" th:value="${user.getSurname()}">-->
-<!--    <br>-->
-<!--    <label th:for="email">Email</label>-->
-<!--    <input type="text" name="email" th:id="email" th:value="${user.getEmail()}">-->
-<!--    <br>-->
-<!--    <label th:for="Password">Password</label>-->
-<!--    <input type="text" name="salary" th:id="email" th:value="${user.getPassword()()}">-->
-<!--    <br>-->
-<!--    <input type="hidden" name="id" th:id="id" th:value="${user.getId()}">-->
-<!--    <br>-->
-<!--    <label>-->
-<!--        Roles:-->
-<!--        <th:block th:each="role: ${listRoles}">-->
-<!--            <input type="checkbox" th:field="*{roles}"-->
-<!--                   th:text="${role.name}" th:value="${role.id}"/>-->
-<!--        </th:block>-->
-<!--        <p></p>-->
-<!--    </label>-->
-<!--    <button type="submit">Save User</button>-->
-<!--</form>-->
+<form th:action="@{/admin/saveUser}" th:object="${user}" method="post">
+    <br>
+    <label th:for="username">Username</label>
+    <input type="text" name="username" th:id="name" th:value="${user.getUsername()}">
+    <br>
+    <label th:for="name">Name</label>
+    <input type="text" name="name" th:id="name" th:value="${user.getName()}">
+    <br>
+    <label th:for="surname">Surname</label>
+    <input type="text" name="surName" th:id="surname" th:value="${user.getSurname()}">
+    <br>
+    <label th:for="email">Email</label>
+    <input type="text" name="email" th:id="email" th:value="${user.getEmail()}">
+    <br>
+    <label th:for="password">Password</label>
+    <input type="text" name="password" th:id="password" th:value="${user.getPassword()}">
+    <br>
+    <input type="hidden" name="id" th:id="id" th:value="${user.getId()}">
+    <br>
+    <label>
+        Roles:
+        <th:block th:each="role: ${listRoles}">
+            <input type="checkbox" th:field="*{roles}"
+                   th:text="${role.name}" th:value="${role.id}"/>
+        </th:block>
+        <p></p>
+    </label>
+    <button type="submit">Save User</button>
+</form>
 
 </body>
 </html>
