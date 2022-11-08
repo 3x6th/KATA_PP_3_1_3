@@ -27,16 +27,19 @@
     <br>
     <input type="hidden" name="id" th:id="id" th:value="${user.getId()}">
     <br>
-    <label>
-        Roles:
-        <th:block th:each="role: ${listRoles}">
+
+    Roles:
+    <th:block th:each="role: ${listRoles}">
+        <label>
             <input type="checkbox" th:field="*{roles}"
                    th:text="${role.name}" th:value="${role.id}"/>
-        </th:block>
-        <p></p>
-    </label>
+        </label>
+    </th:block>
+    <br>
+    <br>
     <button type="submit">Save User</button>
 </form>
-
+<br>
+<button><a href="/admin">Go back</a></button>
 </body>
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <title>Spring Security Example</title>
 </head>
@@ -25,10 +26,10 @@
         <td th:text="${usr.email}"></td>
         <td th:text="${usr.password}"></td>
         <td style="display:flex">
-            <form th:method="GET" th:action="@{/users/updateInfo/{id}(id=${usr.getId()})}">
+            <form th:method="GET" th:action="@{/admin/updateInfo/{id}(id=${usr.getId()})}">
                 <input type="submit" value="Update"/>
             </form>
-            <form th:method="POST" th:action="@{/users/deleteUser/{id}(id=${usr.getId()})}">
+            <form th:method="POST" th:action="@{/admin/deleteUser/{id}(id=${usr.getId()})}">
                 <input type="submit" value="Delete"/>
             </form>
         </td>
