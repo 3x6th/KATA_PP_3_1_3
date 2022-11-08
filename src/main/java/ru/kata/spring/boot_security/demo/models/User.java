@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -40,7 +41,7 @@ public class User implements UserDetails {
     @JoinTable(name="user_roles",
             joinColumns=@JoinColumn(name="user_id"),
             inverseJoinColumns=@JoinColumn(name = "role_id"))
-    private Set<Role> roles;  // add hash & equals
+    private Set<Role> roles;
 
     public void addRoles(Collection<Role> roleCollection) {
         roles = new HashSet<>();
@@ -154,5 +155,18 @@ public class User implements UserDetails {
                 ", email='" + email + '\'' +
                 ", roles=" + roles +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(id, user.id) && Objects.equals(username, user.username);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, username);
     }
 }
